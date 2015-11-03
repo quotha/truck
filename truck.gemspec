@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Dave De Carlo"]
   spec.email         = ["dec114@gmail.com"]
   spec.summary       = %q{A Ruby interface to google analytics}
-  spec.homepage      = "https://github.com/dresources/truck"
+  spec.homepage      = "https://github.com/quotha/truck"
   spec.description   = "Keep truckin"
   spec.license       = "MIT"
 
