@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.name          = "truck"
   spec.version       = Truck::Version
   spec.authors       = ["Dave De Carlo, Bryan Mulvihill"]
-  spec.email         = ["dec114@gmail.com"]
+  spec.email         = ["dec114@gmail.com, mulvihill.bryan@gmail.com"]
   spec.summary       = %q{A Ruby interface to google analytics}
   spec.homepage      = "https://github.com/quotha/truck"
   spec.description   = "Keep truckin"
