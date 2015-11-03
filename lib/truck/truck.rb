@@ -1,6 +1,11 @@
 require 'faraday'
 
 module Truck
+  
+  def truck
+    @truck ||= Truck.new
+  end
+  
   class Truck
     attr_reader :host, :ep, :v, :t, :tid, :cid, :dp
   
