@@ -14,7 +14,7 @@ module Truck
       @dp   = "/"
     end
   
-    def rev
+    def rev(dp = "/")
       conn = Faraday.new(:url => "http://#{host}") do |faraday|
         faraday.request  :url_encoded             # form-encode POST params
         faraday.response :logger                  # log requests to STDOUT
