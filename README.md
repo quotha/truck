@@ -18,6 +18,25 @@ Or install it yourself as:
 
     $ gem install truck_you
 
+In your `config/initializers/truck.rb`:
+
+```yml
+development:
+  host: "www.google-analytics.com/collect"
+  payload:
+    v:    1
+    t:    "pageview"
+    tid:  "UA-XXXXXXXX-1"
+    cid:  "88888888-4444-xxxx-xxxx-XXXXXXXXXXXX"
+production:
+  host: "www.google-analytics.com/collect"
+  payload:
+    v:    1
+    t:    "pageview"
+    tid:  "UA-XXXXXXXX-2"
+    cid:  "88888888-4444-xxxx-xxxx-XXXXXXXXXXXX"
+```
+
 ## Usage
 
 TODO: Write usage instructions here
