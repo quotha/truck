@@ -1,4 +1,4 @@
-# Keep on Truckin'
+# :truck: Keep on Truckin' :truck:
 
 Super simple API client for sending repeated requests to a common endpoint (i.e Google Analytics)
 
