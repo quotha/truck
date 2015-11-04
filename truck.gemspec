@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'truck/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "truck"
+  spec.name          = "truck_you"
   spec.version       = Truck::Version
   spec.authors       = ["Dave De Carlo, Bryan Mulvihill"]
   spec.email         = ["dec114@gmail.com, mulvihill.bryan@gmail.com"]

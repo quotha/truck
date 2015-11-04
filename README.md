@@ -7,7 +7,7 @@ Super simple API client for sending repeated requests to a common endpoint (i.e 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'truck'
+gem 'truck_you'
 ```
 
 And then execute:
@@ -16,7 +16,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install truck
+    $ gem install truck_you
 
 ## Usage
 
