@@ -1,26 +1,35 @@
 require 'faraday'
 
 module Truck
-
-  def truck
-    @truck ||= Truck.new
+  def payload
+    @payload ||= Payload.new
   end
 
-  class Truck
+  class << self
+    attr_writer :configuration
+  end
 
-    def self.ignition(destination, payload = {})
-      @@destination, @@payload = destination, payload
-    end
+  def self.configuration
+    @configuration ||= Configuration.new
+  end
 
-    def rev(dp = "/")
-      conn = Faraday.new(:url => "http://#{@@destination}") do |faraday|
+  def self.configure
+    yield(configuration)
+  end
+
+  class Configuration
+    attr_accessor :host, :payload
+  end
+
+  class Payload
+    def deliver(dp = "/")
+      conn = Faraday.new(:url => "http://#{Truck.configuration.host}") do |faraday|
         faraday.request  :url_encoded             # form-encode POST params
         faraday.response :logger                  # log requests to STDOUT
         faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
       end
 
-      ## POST ##
-      conn.post "", @@payload.merge({ :dp => dp })
+      conn.post "", Truck.configuration.payload.merge({ :dp => dp })
     end
   end
 end
