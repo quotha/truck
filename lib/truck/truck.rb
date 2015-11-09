@@ -18,20 +18,6 @@ module Truck
   end
 
   class Configuration
-    attr_accessor :host, :payload
-  end
-
-  class Payload
-    def deliver(payload = {})
-      connection.post "", Truck.configuration.payload.merge(payload)
-    end
-
-    def connection
-      @connection ||= Faraday.new(:url => "http://#{Truck.configuration.host}") do |faraday|
-        faraday.request  :url_encoded             # form-encode POST params
-        faraday.response :logger                  # log requests to STDOUT
-        faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
-      end
-    end
+    attr_accessor :analytics, :parcels
   end
 end
