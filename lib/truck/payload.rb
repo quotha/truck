@@ -11,10 +11,10 @@ module Truck
       self
     end
 
-    def deliver(message)
+    def deliver(contents)
       parcels.each_with_object([]) do |parcel, acc|
         extend(parcel)
-        acc << drop_off(message)
+        acc << drop_off(contents)
       end
     end
   end

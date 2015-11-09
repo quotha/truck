@@ -1,7 +1,7 @@
 module Truck
   module Analytics
-    def drop_off(parcel)
-      connection.post "", Truck.configuration.analytics.merge(parcel)
+    def drop_off(contents)
+      connection.post "", Truck.configuration.analytics.merge(contents)
     end
 
     private
