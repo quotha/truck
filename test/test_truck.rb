@@ -8,16 +8,14 @@ class TestTruck < Minitest::Test
 
   def setup
     Truck.configure do |config|
-      config.host = '0.0.0.0'
-      config.payload = { :send => 'me' }
+      config.analytics = { :send => 'me' }
     end
   end
 
   def test_configure
-    assert_equal(Truck.configuration.payload, { :send => 'me' })
-    assert_equal(Truck.configuration.host, '0.0.0.0')
+    assert_equal(Truck.configuration.analytics, { :send => 'me' })
   end
-  
+
   def test_payload
     assert_instance_of Truck::Payload, Dummy.new.payload
   end
