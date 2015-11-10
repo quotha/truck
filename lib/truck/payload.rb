@@ -3,7 +3,7 @@ module Truck
     attr_reader :parcels
 
     def initialize
-      @parcels ||= Truck.configuration.parcels
+      @parcels ||= Truck.configuration.parcels || []
     end
 
     def add(parcel)

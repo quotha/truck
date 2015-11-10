@@ -24,6 +24,15 @@ class TestPayload < Minitest::Test
     assert_equal(payload.parcels, [Parcel])
   end
 
+  def test_payload_empty_parcels
+    Truck.configure do |config|
+      config.parcels = nil
+    end
+
+    payload = Truck::Payload.new
+    assert_equal(payload.parcels, [])
+  end
+
   def test_payload_add
     payload = Truck::Payload.new
     payload.add(B).add(Parcel)
