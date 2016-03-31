@@ -1,8 +1,8 @@
 require 'faraday'
 
 module Truck
-  def payload
-    @payload ||= Payload.new
+  def agent
+    @agent ||= Agent.new
   end
 
   class << self
@@ -18,12 +18,12 @@ module Truck
   end
 
   class Configuration
-    attr_accessor :host, :payload
+    attr_accessor :host, :agent
   end
-
-  class Payload
-    def deliver(payload = {})
-      connection.post "", Truck.configuration.payload.merge(payload)
+  
+  class Agent   
+    def deliver agent = {}, payload = {}
+      connection.post "", agent.merge(payload)
     end
 
     def connection
@@ -34,4 +34,5 @@ module Truck
       end
     end
   end
+  
 end
