@@ -9,16 +9,16 @@ class TestTruck < Minitest::Test
   def setup
     Truck.configure do |config|
       config.host = '0.0.0.0'
-      config.payload = { :send => 'me' }
+      config.agent = { :google => {:send => 'me'}, :moon => {:rocket => 'X1'} }
     end
   end
 
   def test_configure
-    assert_equal(Truck.configuration.payload, { :send => 'me' })
+    assert_equal(Truck.configuration.agent[:google], { :send => 'me' })
     assert_equal(Truck.configuration.host, '0.0.0.0')
   end
   
-  def test_payload
-    assert_instance_of Truck::Payload, Dummy.new.payload
+  def test_agent
+    assert_instance_of Truck::Agent, Dummy.new.agent
   end
 end
